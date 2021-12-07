@@ -1,6 +1,7 @@
 using System;
 class BaseProgram
 {
+    public static IDictionary<string, string> dataGunung = new Dictionary<string, string>();
     public BaseProgram()
     {
 
