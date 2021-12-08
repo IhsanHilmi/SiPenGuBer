@@ -1,0 +1,15 @@
+D:\HILMI NITIP\SiPenGuBer\obj\Debug\net6.0\SIPENGUBER.csproj.AssemblyReference.cache
+D:\HILMI NITIP\SiPenGuBer\obj\Debug\net6.0\SIPENGUBER.GeneratedMSBuildEditorConfig.editorconfig
+D:\HILMI NITIP\SiPenGuBer\obj\Debug\net6.0\SIPENGUBER.AssemblyInfoInputs.cache
+D:\HILMI NITIP\SiPenGuBer\obj\Debug\net6.0\SIPENGUBER.AssemblyInfo.cs
+D:\HILMI NITIP\SiPenGuBer\obj\Debug\net6.0\SIPENGUBER.csproj.CoreCompileInputs.cache
+D:\HILMI NITIP\SiPenGuBer\bin\Debug\net6.0\SIPENGUBER.exe
+D:\HILMI NITIP\SiPenGuBer\bin\Debug\net6.0\SIPENGUBER.deps.json
+D:\HILMI NITIP\SiPenGuBer\bin\Debug\net6.0\SIPENGUBER.runtimeconfig.json
+D:\HILMI NITIP\SiPenGuBer\bin\Debug\net6.0\SIPENGUBER.dll
+D:\HILMI NITIP\SiPenGuBer\bin\Debug\net6.0\ref\SIPENGUBER.dll
+D:\HILMI NITIP\SiPenGuBer\bin\Debug\net6.0\SIPENGUBER.pdb
+D:\HILMI NITIP\SiPenGuBer\obj\Debug\net6.0\SIPENGUBER.dll
+D:\HILMI NITIP\SiPenGuBer\obj\Debug\net6.0\ref\SIPENGUBER.dll
+D:\HILMI NITIP\SiPenGuBer\obj\Debug\net6.0\SIPENGUBER.pdb
+D:\HILMI NITIP\SiPenGuBer\obj\Debug\net6.0\SIPENGUBER.genruntimeconfig.cache
