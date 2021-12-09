@@ -1,33 +1,29 @@
 using System;
 class BaseProgram
 {
+    public static IDictionary<string, string> dataGunung = new Dictionary<string, string>();
     public BaseProgram()
     {
 
     }
     public static void ClearMenu()
     {
-        Console.Clear();
-        WriteTitle();
+        Console.ResetColor();
+        int TitleLineCursor = 7;
+        for (int i = Console.CursorTop; i > TitleLineCursor; i--)
+        {
+            Console.SetCursorPosition(0, i);
+            Console.Write(new string(' ', Console.WindowWidth));
+        }
     }
-    static void WriteTitle()
-    {
-        Console.WriteLine();
-        Console.WriteLine("================================================================================");
-        Console.WriteLine(" ███████ ██ ██████  ███████ ███    ██  ██████  ██    ██ ██████  ███████ ██████  ");
-        Console.WriteLine(" ██      ██ ██   ██ ██      ████   ██ ██       ██    ██ ██   ██ ██      ██   ██ ");
-        Console.WriteLine(" ███████ ██ ██████  █████   ██ ██  ██ ██   ███ ██    ██ ██████  █████   ██████  ");
-        Console.WriteLine("      ██ ██ ██      ██      ██  ██ ██ ██    ██ ██    ██ ██   ██ ██      ██   ██ ");
-        Console.WriteLine(" ███████ ██ ██      ███████ ██   ████  ██████   ██████  ██████  ███████ ██   ██ ");
-        Console.WriteLine("================================================================================");
-        Console.WriteLine();
-    }
+
     public static int SelectingOption(string[] menuOptions)
     {
         int selectedIndex = 0;
         ConsoleKeyInfo pressedKey;
         do
         {
+            Console.CursorVisible = false;
             WriteOptions(selectedIndex, menuOptions);
             pressedKey = Console.ReadKey(true);
             switch (pressedKey.Key)
@@ -55,20 +51,21 @@ class BaseProgram
     static void WriteOptions(int selectedIndex, string[] options)
     {
         string prefix;
+        Console.WriteLine("Use Arrow (↑/↓)");
         for (int i = 0; i < options.Length; i++)
         {
             if (i == selectedIndex)
             {
-                prefix = ">>";
-                Console.BackgroundColor = ConsoleColor.Cyan;
+                Console.BackgroundColor = ConsoleColor.Green;
                 Console.ForegroundColor = ConsoleColor.Black;
+                prefix = ">>> ";
             }
             else
             {
-                prefix = "  ";
+                prefix = " ♦ ";
+                Console.ResetColor();
             }
             Console.Write($"{prefix}{options[i]}");
-            Console.ResetColor();
             Console.WriteLine();
         }
     }

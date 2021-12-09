@@ -6,7 +6,11 @@ class MainProgram : BaseProgram
     {
         int indexMainMenu;
 
-        ClearMenu();
+        Console.SetWindowSize(81, Console.WindowHeight);
+        Console.BufferWidth = 81;
+        Console.ResetColor();
+        Console.Clear();
+        WriteTitle();
         indexMainMenu = SelectingOption(mainMenuOptions);
         switch (indexMainMenu)
         {
@@ -21,6 +25,20 @@ class MainProgram : BaseProgram
                 break;
             default: break;
         }
-
+    }
+    static void WriteTitle()
+    {
+        Console.BackgroundColor = ConsoleColor.Black;
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine();
+        Console.WriteLine("================================================================================");
+        Console.WriteLine(" ███████ ██ ██████  ███████ ███    ██  ██████  ██    ██ ██████  ███████ ██████  ");
+        Console.WriteLine(" ██      ██ ██   ██ ██      ████   ██ ██       ██    ██ ██   ██ ██      ██   ██ ");
+        Console.WriteLine(" ███████ ██ ██████  █████   ██ ██  ██ ██   ███ ██    ██ ██████  █████   ██████  ");
+        Console.WriteLine("      ██ ██ ██      ██      ██  ██ ██ ██    ██ ██    ██ ██   ██ ██      ██   ██ ");
+        Console.WriteLine(" ███████ ██ ██      ███████ ██   ████  ██████   ██████  ██████  ███████ ██   ██ ");
+        Console.WriteLine("================================================================================");
+        Console.WriteLine();
+        Console.ResetColor();
     }
 }
