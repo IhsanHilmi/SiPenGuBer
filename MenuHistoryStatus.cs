@@ -5,15 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace random
-{
-    class HistoryProgram
+    class HistoryProgram : BaseProgram
     {
         static string[] MenuHistori = { "Cek Semua", "Cek Khusus" };
         static void Main(string[] args)
         {
             var Jam = DateTime.Now;
-            Console.WriteLine(Jam.ToString("hh:mm:ss"));
+            Console.WriteLine(Jam.ToString("H:m"));
             string waktu = Jam.ToString();
             
             //Akses file.txt
@@ -26,20 +24,18 @@ namespace random
             dict.Add("03", "ini 3");
             dict.Add("04", "ini 4");
                 
-            do
-            {
-                Console.WriteLine("Pilih Menu\nCek Semua Histori\nCek Histori Khusus");
-                string menu = Console.ReadLine();
-                Console.Clear();
+            Console.WriteLine("Pilih Menu\nCek Semua Histori\nCek Histori Khusus");
+            int menu = SelectingOption(MenuHistori);
+            Console.Clear();
 
             
-                if (menu == "1")
+                if (menu == 0)
                 {
                     foreach(var item in dict)
                         Console.WriteLine(item);
                 }
 
-                else if(menu == "2")
+                else if(menu == 1)
                 {
                     Console.WriteLine("Data yang tersedia : ");
 
@@ -91,7 +87,5 @@ namespace random
                     repeat = true;
                 }
 
-            } while (repeat);
         }
     }
-}
