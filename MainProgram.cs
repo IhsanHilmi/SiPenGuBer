@@ -18,7 +18,7 @@ class MainProgram : BaseProgram
                 new MenuCekStatus();
                 break;
             case 1:
-                new MenuHistoryStatus();
+                new HistoryProgram();
                 break;
             case 2:
                 new MenuReset();
