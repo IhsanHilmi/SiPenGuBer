@@ -8,11 +8,9 @@ using System.Threading.Tasks;
     class HistoryProgram : BaseProgram
     {
         static string[] MenuHistori = { "Cek Semua", "Cek Khusus" };
-        static void Main(string[] args)
+        public HistoryProgram()
         {
-            var Jam = DateTime.Now;
-            Console.WriteLine(Jam.ToString("H:m"));
-            string waktu = Jam.ToString();
+            
             
             //Akses file.txt
            //string filepath = @"C:\\Users\\yohan\\source\\repos\\Tugas Akhir\\Tugas Akhir\\file.txt";
@@ -24,10 +22,13 @@ using System.Threading.Tasks;
             dict.Add("03", "ini 3");
             dict.Add("04", "ini 4");
                 
-            
-            int menu = SelectingOption(MenuHistori);
-            Console.Clear();
+            do
+            {
+                ClearMenu();
+                int menu = SelectingOption(MenuHistori);
+                ClearMenu();
 
+            
             
                 if (menu == 0)
                 {
@@ -68,24 +69,34 @@ using System.Threading.Tasks;
                     Console.WriteLine(data);
                 }
 
-                Console.WriteLine("Ingin melakukan pengecheckan lainnya? (y/n)");
-                string mengulangi = Console.ReadLine().ToLower();
-                if (mengulangi == "y")
+                bool repeat2 = false;
+
+                do
                 {
-                    repeat = true;
-                }
+                     Console.WriteLine("Ingin melakukan pengecheckan lainnya? (y/n)");
+                    string mengulangi = Console.ReadLine().ToLower();
+                    if (mengulangi == "y")
+                     {
+                        repeat = true;
+                        repeat2 = false;
+                     }
 
                 else if (mengulangi == "n")
                 {
                     Console.WriteLine("Terima kasih telah menggunakan program ini.\nJangan lupa untuk mengecheck secara berkala!");
                     repeat = false;
-
+                    repeat2 = false;
                 }
                 else
                 {                   
-                    Console.WriteLine("Hanya menerima masukan angka y/n!!");
-                    repeat = true;
+                    Console.WriteLine("Hanya menerima masukan huruf y/n!!");
+                    repeat2 = true;
                 }
+                }while(repeat2);
+               
+            }while(repeat);
+            
+                
 
         }
     }
