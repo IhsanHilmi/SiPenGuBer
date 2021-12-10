@@ -24,7 +24,7 @@ using System.Threading.Tasks;
             dict.Add("03", "ini 3");
             dict.Add("04", "ini 4");
                 
-            Console.WriteLine("Pilih Menu\nCek Semua Histori\nCek Histori Khusus");
+            
             int menu = SelectingOption(MenuHistori);
             Console.Clear();
 
