@@ -16,12 +16,7 @@ using System.Threading.Tasks;
            //string filepath = @"C:\\Users\\yohan\\source\\repos\\Tugas Akhir\\Tugas Akhir\\file.txt";
            
             bool repeat = false;
-            var dict = new Dictionary<string, string>();
-            dict.Add("01", "ini 1");
-            dict.Add("02", "ini 2");
-            dict.Add("03", "ini 3");
-            dict.Add("04", "ini 4");
-                
+            
             do
             {
                 ClearMenu();
@@ -32,7 +27,7 @@ using System.Threading.Tasks;
             
                 if (menu == 0)
                 {
-                    foreach(var item in dict)
+                    foreach(var item in dataGunung)
                         Console.WriteLine(item);
                 }
 
@@ -40,7 +35,7 @@ using System.Threading.Tasks;
                 {
                     Console.WriteLine("Data yang tersedia : ");
 
-                    foreach(var item in dict)
+                    foreach(var item in dataGunung)
                         Console.WriteLine(item.Key);
                     
                     string data = "Maaf, data belum diisi!";
@@ -49,12 +44,12 @@ using System.Threading.Tasks;
                       Console.Write("Pukul berapa yang anda ingin cek? ");
                       Console.Write("Pukul : ");
                       string pencarian = Console.ReadLine().PadLeft(2, '0');
-                      foreach(string i in dict.Keys)
+                      foreach(string i in dataGunung.Keys)
                       {
                           if (i == pencarian)
                           {
-                              data = dict[i];
-                              Console.WriteLine("Ini data Dict " + data);
+                              data = dataGunung[i];
+                              Console.WriteLine("Ini data dataGunung " + data);
                               
                               repeat = false;
                           }
