@@ -45,14 +45,31 @@ namespace random
 
                     foreach(var item in dict)
                         Console.WriteLine(item.Key);
+                    
+                    string data = "Maaf, data belum diisi!";
+                    do
+                    {
+                      Console.Write("Pukul berapa yang anda ingin cek? ");
+                      Console.Write("Pukul : ");
+                      string pencarian = Console.ReadLine().PadLeft(2, '0');
+                      foreach(string i in dict.Keys)
+                      {
+                          if (i == pencarian)
+                          {
+                              data = dict[i];
+                              Console.WriteLine("Ini data Dict " + data);
+                              
+                              repeat = false;
+                          }
+                      } 
+                      if (data == "Maaf, data belum diisi!" )
+                      {
+                          Console.WriteLine("Data tidak ditemukan, tolong Ulangi");
+                          repeat = true;
+                      }
+                    }while(repeat);
 
-                    Console.Write("Pukul berapa yang anda ingin cek? ");
-                    Console.Write("Pukul : ");
-                    string pencarian = Console.ReadLine();
-
-                    Console.WriteLine(dict[pencarian.PadLeft(2, '0')]);
-
-                   
+                    Console.WriteLine(data);
                 }
 
                 Console.WriteLine("Ingin melakukan pengecheckan lainnya? (y/n)");
@@ -70,8 +87,8 @@ namespace random
                 }
                 else
                 {                   
-                    Console.WriteLine("Hanya menerima masukan angka 1/2!!");
-                    repeat = false;
+                    Console.WriteLine("Hanya menerima masukan angka y/n!!");
+                    repeat = true;
                 }
 
             } while (repeat);
