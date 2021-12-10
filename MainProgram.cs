@@ -1,7 +1,7 @@
 ﻿using System;
 class MainProgram : BaseProgram
 {
-    static string[] mainMenuOptions = { "Cek Status", "Lihat History Status", "Reset" };
+    static string[] mainMenuOptions = { "Cek Status", "Lihat History Status", "Reset", "Exit" };
     static void Main()
     {
         int indexMainMenu;
@@ -11,20 +11,27 @@ class MainProgram : BaseProgram
         Console.ResetColor();
         Console.Clear();
         WriteTitle();
-        indexMainMenu = SelectingOption(mainMenuOptions);
-        switch (indexMainMenu)
+        do
         {
-            case 0:
-                new MenuCekStatus();
-                break;
-            case 1:
-                new HistoryProgram();
-                break;
-            case 2:
-                new MenuReset();
-                break;
-            default: break;
-        }
+            ClearMenu();
+            indexMainMenu = SelectingOption(mainMenuOptions);
+            switch (indexMainMenu)
+            {
+                case 0:
+                    new MenuCekStatus();
+                    break;
+                case 1:
+                    new HistoryProgram();
+                    break;
+                case 2:
+                    new MenuReset();
+                    break;
+                case 3:
+                    return;
+                default: break;
+            }
+        } while (true);
+
     }
     static void WriteTitle()
     {
