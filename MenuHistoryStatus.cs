@@ -43,7 +43,7 @@ using System.Threading.Tasks;
                     {
                       Console.Write("Pukul berapa yang anda ingin cek? ");
                       Console.Write("Pukul : ");
-                      string pencarian = Console.ReadLine().PadLeft(2, '0');
+                      string pencarian = Console.ReadLine();
                       foreach(string i in dataGunung.Keys)
                       {
                           if (i == pencarian)
@@ -79,7 +79,7 @@ using System.Threading.Tasks;
                 else if (mengulangi == "n")
                 {
                     Console.WriteLine("Terima kasih telah menggunakan program ini.\nJangan lupa untuk mengecheck secara berkala!");
-                    repeat = false;
+                    
                     repeat2 = false;
                 }
                 else
