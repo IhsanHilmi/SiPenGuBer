@@ -1,7 +1,7 @@
 using System;
 class BaseProgram
 {
-    public static IDictionary<string, string> dataGunung = new Dictionary<string, string>();
+
     public BaseProgram()
     {
 
@@ -15,6 +15,21 @@ class BaseProgram
             Console.SetCursorPosition(0, i);
             Console.Write(new string(' ', Console.WindowWidth));
         }
+    }
+    public static string CekInputJam(string pertanyaan)
+    {
+        TimeOnly jamMenit;
+        bool isHourMinute = false;
+        do
+        {
+            Console.WriteLine(pertanyaan);
+            isHourMinute = TimeOnly.TryParse(Console.ReadLine(), out jamMenit);
+            if (!isHourMinute)
+            {
+                Console.WriteLine("Silakan masukan input yang sesuai!");
+            }
+        } while (!isHourMinute);
+        return jamMenit.ToString("H:m");
     }
 
     public static int SelectingOption(string[] menuOptions)

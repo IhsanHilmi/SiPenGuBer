@@ -1,6 +1,7 @@
 ﻿using System;
 class MainProgram : BaseProgram
 {
+    public static IDictionary<string, string> dataGunung = new Dictionary<string, string>();
     static string[] mainMenuOptions = { "Cek Status", "Lihat History Status", "Reset", "Exit" };
     static void Main()
     {
