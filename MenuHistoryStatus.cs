@@ -48,7 +48,7 @@ class HistoryProgram : BaseProgram
                         if (i == pencarian)
                         {
                             data = MainProgram.dataGunung[i];
-                            Console.WriteLine(i + " " + data);
+                            Console.WriteLine(i + " " +data);
 
                             repeat = false;
                         }
