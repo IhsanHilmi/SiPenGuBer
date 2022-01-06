@@ -22,14 +22,33 @@ class MenuCekStatus : BaseProgram
 
             var waktu = DateTime.Now;
             Console.WriteLine("waktu saat ini: " + waktu.ToString("H:m"));
-
             jam = CekInputJam("Silakan masukkan jam pengecekan gunung ! (jam:menit)");
+
+            if (MainProgram.dataGunung.ContainsKey(jam))
+            {
+                Console.WriteLine(MainProgram.dataGunung[jam]);
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine($"pengecekan pada waktu {jam} sudah ada!");
+                Console.ResetColor();
+                Console.WriteLine();
+                string validasiJam = PertanyaanKondisiString("apakah anda ingin overwrite datanya ? (ya/tidak)");
+                switch (validasiJam)
+                {
+                    case "ya":
+                        MainProgram.dataGunung.Remove(jam);
+                        break;
+                    case "tidak": return;
+                    default: break;
+                }
+            }
+
 
             Console.WriteLine("=====================================");
 
             magnitudoGempa = Convert.ToString(PertanyaanKondisiDouble("Silakan masukkan magnitudo gempa!"));
 
-            awanPanas = (PertanyaanKondisiString("apakah ada gas berbahaya? (ya/tidak)"));
+            awanPanas = (PertanyaanKondisiString("apakah ada awan panas? (ya/tidak)"));
 
             suhu = Convert.ToString(PertanyaanKondisiDouble("silakan masukan suhu!"));
 
